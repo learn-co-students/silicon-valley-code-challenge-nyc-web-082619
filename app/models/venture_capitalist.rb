@@ -23,12 +23,14 @@ class VentureCapitalist
   
   def biggest_investment
     allFund = self.funding_rounds.map { |fundRound| fundRound.investment } # return array of investment. [100, 4343340, 20394]
-    allFund.max 
+    maxInvest = allFund.max 
+
+    self.funding_rounds.find{ |fundRound| fundRound.investment == maxInvest}
   end
   
   def invested(domainString)
     totalInvest = 0
-    domain = FundingRound.all.select { |fundRound| fundRound.startup.domain == domainString} 
+    domain = self.funding_rounds.select { |fundRound| fundRound.startup.domain == domainString} 
     domainInvestment = domain.map { |domain| domain.investment } 
     domainInvestment.each { |investment| totalInvest += investment }
     totalInvest
