@@ -35,7 +35,7 @@ class Startup
           end
 
           def funding_rounds
-            FundingRound.all.select{|fr.startup == self}
+            FundingRound.all.select{|fr| fr.startup == self}
           end
 
           def num_funding_rounds
@@ -59,7 +59,7 @@ class Startup
 
 
 
-    end
+    
 
     
 

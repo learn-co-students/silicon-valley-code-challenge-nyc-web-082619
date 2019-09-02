@@ -5,7 +5,7 @@ def reload
 end
 
 s1 = Startup.new("BeeBee", "Bee", "bee.com")
-s2 = Startup.new("Bebe", "Bob", "bebe.com")
+s2 = Startup.new("Bobo", "Bob", "bobo.com")
 
 vc1 = VentureCapitalist.new("Bee", 1200000000)
 vc2 = VentureCapitalist.new("Bob", 999999)
